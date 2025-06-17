@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import * as BsIcons from 'react-icons/bs';
 // import Image from 'next/image';
 import { HiArrowSmRight } from 'react-icons/hi';
+// import { cn } from '@/lib/utils';
 
 const words: string[] = [
   'AFFORDABLE',
@@ -35,8 +36,9 @@ const Hero: React.FC = () => {
   const fadeBase = 'transition-all duration-700 ease-out';
 
   return (
-    <main className='relative mx-6 h-[800px] flex items-center justify-center overflow-hidden'>
-      <div className='relative z-40 w-full'>
+    <main className='relative w-full h-[45rem] flex items-center justify-center overflow-hidden mt-8'>
+      <div className='relative h-full w-full'>
+        <div className='absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_50%,transparent_100%)]'></div>
         <p
           className={`${fadeBase} delay-300 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
@@ -71,17 +73,10 @@ const Hero: React.FC = () => {
 
         <div className='z-40 flex w-full gap-x-2 justify-center mb-6'>
           <button
-            className={`${fadeBase} delay-400 ${
+            className={`${fadeBase}  ${
               mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-            } flex justify-center border-2 border-blue-500 w-[150px] lg:w-[250px] px-2 py-2 lg:py-4 rounded-lg hover:bg-black hover:text-white text-center font-bold`}>
+            } flex border-solid border-blue-500 bg-blue-500 border-2 text-white px-10 py-2 rounded-lg hover:bg-white hover:text-black transition-colors duration-300 font-bold`}>
             START HERE <HiArrowSmRight className='rotate-45 size-5 ml-1' />
-          </button>
-
-          <button
-            className={`${fadeBase} delay-400 ${
-              mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-            } flex justify-center border-2 border-blue-500 w-[150px] lg:w-[250px] px-2 py-2 lg:py-4 rounded-lg bg-blue-500 hover:bg-transparent hover:text-blue-500 text-black font-bold`}>
-            LOGIN <HiArrowSmRight className='rotate-45 size-5 ml-1' />
           </button>
         </div>
 
