@@ -1,9 +1,10 @@
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Reviews from '@/components/Reviews';
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Reviews from "@/components/Reviews";
+import Pricing from "@/components/Pricing";
 
 export const metadata = {
-  title: 'Home',
+  title: "Home",
 };
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <Hero />
       <About />
+      <Pricing />
       <Reviews />
     </>
   );
