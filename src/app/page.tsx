@@ -1,3 +1,3 @@
-export default function Home() {
-  return <div></div>;
-}
+import Page from '@/app/(rs)/home/page';
+
+export default Page;

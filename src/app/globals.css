@@ -168,7 +168,7 @@ body {
   background: var(--background);
   mask-image: url('../../public/curveNegative.svg');
   mask-repeat: no-repeat;
-  mask-size: cover;
+  mask-size: contain;
   top: 0;
   transform: rotate(180deg);
 }

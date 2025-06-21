@@ -36,20 +36,20 @@ const Hero: React.FC = () => {
   const fadeBase = 'transition-all duration-700 ease-out';
 
   return (
-    <main className='relative w-full h-[45rem] flex items-center justify-center overflow-hidden mt-8'>
+    <main className='relative w-full h-[35rem] flex items-center justify-center overflow-hidden mt-8'>
       <div className='relative h-full w-full'>
-        <div className='absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_50%,transparent_100%)]'></div>
+        <div className='absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)]'></div>
         <p
           className={`${fadeBase} delay-300 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-          } mb-2 font-bold text-center text-lg md:text-3xl`}>
+          } font-bold text-center text-lg md:text-2xl`}>
           BRING YOUR COMPANY FORWARD
         </p>
 
         <h1
           className={`${fadeBase} delay-200 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-          } text-5xl md:text-7xl lg:text-8xl 2xl:text-9xl font-bold tracking-tighter text-center flex flex-col text-slate-750`}>
+          } text-5xl md:text-7xl lg:text-8xl 2xl:text-9xl/27 font-bold tracking-tighter text-center flex flex-col text-slate-750`}>
           <span
             key={index}
             className={`inline-block text-blue-500 transition-all duration-600 ease-out ${
@@ -65,17 +65,16 @@ const Hero: React.FC = () => {
         <p
           className={`${fadeBase} delay-300 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-          } text-center text-md md:text-lg text-blue-400 max-w-2xl mx-auto leading-relaxed mb-6`}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-          harum odio blanditiis eaque, ratione recusandae ex ducimus rem, ut
-          porro dignissimos laudantium, sunt consequuntur natus!
+          } text-center text-md md:text-lg font-bold text-blue-400 max-w-2xl mx-auto leading-relaxed mb-6`}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+          quibusdam facilis? Libero unde modi totam.
         </p>
 
         <div className='z-40 flex w-full gap-x-2 justify-center mb-6'>
           <button
             className={`${fadeBase}  ${
               mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-            } flex border-solid border-blue-500 bg-blue-500 border-2 text-white px-10 py-2 rounded-lg hover:bg-white hover:text-black transition-colors duration-300 font-bold`}>
+            } flex bg-blue-500 text-white px-10 py-2 hover:bg-white hover:text-black transition-colors duration-300 font-bold`}>
             START HERE <HiArrowSmRight className='rotate-45 size-5 ml-1' />
           </button>
         </div>
@@ -87,7 +86,6 @@ const Hero: React.FC = () => {
           <BsIcons.BsFacebook className='hover:text-slate-500 w-5 h-5' />
           <BsIcons.BsLinkedin className='hover:text-slate-500 w-5 h-5' />
           <BsIcons.BsInstagram className='hover:text-slate-500 w-5 h-5' />
-          <BsIcons.BsTwitterX className='hover:text-slate-500 w-5 h-5' />
         </div>
       </div>
 

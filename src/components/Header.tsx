@@ -26,9 +26,9 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <div className='h-auto w-full max-w-7xl z-50 m-auto py-6 lg:px-10 xl:px-5 relative font-bold'>
+    <div className='h-auto z-50 py-6 lg:px-10 xl:px-5 relative font-bold'>
       {isDesktop ? (
-        <nav className='flex justify-between items-center transition-opacity duration-500 animate-slide animate-appear'>
+        <nav className='flex max-w-7xl mx-auto justify-between items-center transition-opacity duration-500 animate-slide animate-appear'>
           <div className='z-50 flex items-center gap-x-2'>
             {/* <Image
               src='/assets/img/evergreen-jlbs-06 copy.png'
@@ -40,18 +40,18 @@ const Header: React.FC = () => {
               priority
               className='z-40'
             /> */}
-            <h2 className='z-50 text-xl'>BUSINESS NAME</h2>
+            <h2 className='z-50 text-md'>BUSINESS NAME</h2>
           </div>
 
           <div className='z-50 flex flex-row items-center gap-x-8'>
-            <ul className='flex gap-x-6 '>
-              <li className='hover:text-slate-500 gap-x-2 flex items-center'>
+            <ul className='flex gap-x-6'>
+              <li className='hover:text-slate-500 gap-x-2 flex items-center text-sm'>
                 <IoHomeSharp className='size-4' /> HOME
               </li>
-              <li className='hover:text-slate-500'>ABOUT US</li>
-              <li className='hover:text-slate-500'>CONTACT</li>
+              <li className='hover:text-slate-500 text-sm'>ABOUT US</li>
+              <li className='hover:text-slate-500 text-sm'>CONTACT</li>
             </ul>
-            <button className='flex border-solid border-blue-500 bg-blue-500 border-2 text-white px-10 py-2 rounded-lg hover:bg-white hover:text-black transition-colors duration-300'>
+            <button className='flex bg-blue-500 text-sm text-white px-8 py-1  hover:bg-white hover:text-black transition-colors duration-300'>
               START HERE
               <HiArrowSmRight className='rotate-45 size-5 ml-2' />
             </button>
@@ -71,7 +71,7 @@ const Header: React.FC = () => {
               priority
               className='z-40'
             /> */}
-            <h2 className='z-40 ml-2'>SKEMA</h2>
+            <h2 className='z-40 ml-2'>BUSINESS NAME</h2>
           </div>
 
           <FaBars onClick={toggle} className='w-8 h-auto cursor-pointer' />
