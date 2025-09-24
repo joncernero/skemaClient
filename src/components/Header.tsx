@@ -1,29 +1,29 @@
-'use client';
+'use client'
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 // import Image from 'next/image';
-import { FaBars } from 'react-icons/fa';
-import { HiArrowSmRight } from 'react-icons/hi';
-import { IoHomeSharp } from 'react-icons/io5';
-import SideBar from '@/components/Sidebar';
-import { ModeToggle } from '@/components/ModeToggle';
+import { FaBars } from 'react-icons/fa'
+import { HiArrowSmRight } from 'react-icons/hi'
+import { IoHomeSharp } from 'react-icons/io5'
+import SideBar from '@/components/Sidebar'
+import { ModeToggle } from '@/components/ModeToggle'
 
 const Header: React.FC = () => {
-  const [isDesktop, setIsDesktop] = useState<boolean>(false);
-  const [open, setOpen] = useState<boolean>(false);
+  const [isDesktop, setIsDesktop] = useState<boolean>(false)
+  const [open, setOpen] = useState<boolean>(false)
 
-  const toggle = (): void => setOpen((prev) => !prev);
+  const toggle = (): void => setOpen(prev => !prev)
 
   useEffect(() => {
     // Check viewport width
     const checkWidth = (): void => {
-      setIsDesktop(window.innerWidth >= 1064);
-    };
+      setIsDesktop(window.innerWidth >= 1064)
+    }
 
-    checkWidth();
-    window.addEventListener('resize', checkWidth);
-    return () => window.removeEventListener('resize', checkWidth);
-  }, []);
+    checkWidth()
+    window.addEventListener('resize', checkWidth)
+    return () => window.removeEventListener('resize', checkWidth)
+  }, [])
 
   return (
     <div className='h-auto z-50 py-6 lg:px-10 xl:px-5 relative font-bold'>
@@ -80,7 +80,7 @@ const Header: React.FC = () => {
 
       {open && <SideBar toggle={toggle} />}
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

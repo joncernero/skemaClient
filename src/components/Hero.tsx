@@ -1,8 +1,8 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import * as BsIcons from 'react-icons/bs';
+'use client'
+import React, { useState, useEffect } from 'react'
+import * as BsIcons from 'react-icons/bs'
 // import Image from 'next/image';
-import { HiArrowSmRight } from 'react-icons/hi';
+import { HiArrowSmRight } from 'react-icons/hi'
 // import { cn } from '@/lib/utils';
 
 const words: string[] = [
@@ -10,35 +10,36 @@ const words: string[] = [
   'SUSTAINABLE',
   'ACHIEVABLE',
   'ACCESSIBLE',
-  'PRACTICAL',
-];
+  'PRACTICAL'
+]
 
 const Hero: React.FC = () => {
-  const [mounted, setMounted] = useState<boolean>(false);
-  const [index, setIndex] = useState<number>(0);
-  const [wordVisible, setWordVisible] = useState<boolean>(true);
+  const [mounted, setMounted] = useState<boolean>(false)
+  const [index, setIndex] = useState<number>(0)
+  const [wordVisible, setWordVisible] = useState<boolean>(true)
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const cycle = setInterval(() => {
-      setWordVisible(false);
+      setWordVisible(false)
       setTimeout(() => {
-        setIndex((prev) => (prev + 1) % words.length);
-        setWordVisible(true);
-      }, 600);
-    }, 4000);
-    return () => clearInterval(cycle);
-  }, []);
+        setIndex(prev => (prev + 1) % words.length)
+        setWordVisible(true)
+      }, 600)
+    }, 4000)
+    return () => clearInterval(cycle)
+  }, [])
 
-  const fadeBase = 'transition-all duration-700 ease-out';
+  const fadeBase = 'transition-all duration-700 ease-out'
 
   return (
-    <main className='relative w-full h-[35rem] flex items-center justify-center overflow-hidden mt-8'>
-      <div className='relative h-full w-full'>
-        <div className='absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)]'></div>
+    <main className='relative w-full h-screen md:max-h-[950px] flex items-center justify-center overflow-hidden'>
+      <div className='absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)]'></div>
+
+      <div className='w-full max-w-7xl flex flex-col gap-12'>
         <p
           className={`${fadeBase} delay-300 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
@@ -49,7 +50,7 @@ const Hero: React.FC = () => {
         <h1
           className={`${fadeBase} delay-200 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-          } text-5xl md:text-7xl lg:text-8xl 2xl:text-9xl/27 font-bold tracking-tighter text-center flex flex-col text-slate-750`}>
+          } text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-center flex flex-col text-slate-750`}>
           <span
             key={index}
             className={`inline-block text-blue-500 transition-all duration-600 ease-out ${
@@ -65,12 +66,12 @@ const Hero: React.FC = () => {
         <p
           className={`${fadeBase} delay-300 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-          } text-center text-md md:text-lg font-bold text-blue-400 max-w-2xl mx-auto leading-relaxed mb-6`}>
+          } text-center text-md md:text-lg font-bold text-blue-400 max-w-2xl mx-auto leading-relaxed`}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
           quibusdam facilis? Libero unde modi totam.
         </p>
 
-        <div className='z-40 flex w-full gap-x-2 justify-center mb-6'>
+        <div className='z-40 flex w-full gap-x-2 justify-center'>
           <button
             className={`${fadeBase}  ${
               mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
@@ -104,7 +105,7 @@ const Hero: React.FC = () => {
 
       {/* <div className='absolute inset-0 bg-gradient-to-tr from-white from-60% opacity-70 z-10'></div> */}
     </main>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

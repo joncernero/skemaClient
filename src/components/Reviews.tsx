@@ -1,13 +1,13 @@
-'use client';
+'use client'
 
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 interface Review {
-  name: string;
-  company: string;
-  review: string;
-  rating: number;
+  name: string
+  company: string
+  review: string
+  rating: number
 }
 
 const reviews: Review[] = [
@@ -16,40 +16,40 @@ const reviews: Review[] = [
     company: 'Tech Innovations',
     review:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    rating: 5,
+    rating: 5
   },
   {
     name: 'Bob Smith',
     company: 'Health Solutions',
     review:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    rating: 4,
+    rating: 4
   },
   {
     name: 'Carol Tan',
     company: 'Educational Insights',
     review:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    rating: 3,
-  },
-];
+    rating: 3
+  }
+]
 
 const Reviews: React.FC = () => {
-  const [slideIndex, setSlideIndex] = useState<number>(1);
+  const [slideIndex, setSlideIndex] = useState<number>(1)
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setSlideIndex((prevIndex) =>
+      setSlideIndex(prevIndex =>
         prevIndex === reviews.length ? 1 : prevIndex + 1
-      );
-    }, 7000);
+      )
+    }, 7000)
 
-    return () => clearInterval(timer);
-  }, []);
+    return () => clearInterval(timer)
+  }, [])
 
   const currentSlide = (n: number): void => {
-    setSlideIndex(n);
-  };
+    setSlideIndex(n)
+  }
 
   return (
     <div className='relative flex justify-center items-center h-3/4 overflow-hidden md:p-24'>
@@ -99,7 +99,7 @@ const Reviews: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Reviews;
+export default Reviews

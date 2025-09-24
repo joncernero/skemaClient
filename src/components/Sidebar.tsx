@@ -1,13 +1,13 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { AiOutlineClose } from 'react-icons/ai';
-import { IoHomeSharp } from 'react-icons/io5';
-import * as BsIcons from 'react-icons/bs';
+import React from 'react'
+import { AiOutlineClose } from 'react-icons/ai'
+import { IoHomeSharp } from 'react-icons/io5'
+import * as BsIcons from 'react-icons/bs'
 // import Image from 'next/image';
 
 interface SideBarProps {
-  toggle: () => void;
+  toggle: () => void
 }
 
 const SideBar: React.FC<SideBarProps> = ({ toggle }) => {
@@ -56,7 +56,7 @@ const SideBar: React.FC<SideBarProps> = ({ toggle }) => {
         </div>
       </ul>
     </aside>
-  );
-};
+  )
+}
 
-export default SideBar;
+export default SideBar
