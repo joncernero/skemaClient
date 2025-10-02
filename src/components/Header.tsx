@@ -51,7 +51,7 @@ const Header: React.FC = () => {
               <li className='hover:text-slate-500 text-sm'>ABOUT US</li>
               <li className='hover:text-slate-500 text-sm'>CONTACT</li>
             </ul>
-            <button className='flex bg-blue-500 text-sm text-white px-8 py-1  hover:bg-white hover:text-black transition-colors duration-300'>
+            <button className='flex bg-blue-500 text-sm text-white px-10 py-2 rounded-full hover:bg-white hover: border-blue-500 focus:border-2 focus:outline-hidden hover:text-black transition-colors duration-300'>
               START HERE
               <HiArrowSmRight className='rotate-45 size-5 ml-2' />
             </button>

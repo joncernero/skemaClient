@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
           <button
             className={`${fadeBase}  ${
               mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-            } flex bg-blue-500 text-white px-10 py-2 hover:bg-white hover:text-black transition-colors duration-300 font-bold`}>
+            } flex bg-blue-500 text-white px-12 py-3 hover:bg-white hover:text-black transition-colors duration-300 font-bold rounded-full`}>
             START HERE <HiArrowSmRight className='rotate-45 size-5 ml-1' />
           </button>
         </div>
@@ -88,21 +88,6 @@ const Hero: React.FC = () => {
           <BsIcons.BsInstagram className='hover:text-slate-500 w-5 h-5' />
         </div>
       </div>
-
-      {/* <div className='absolute inset-0 h-screen w-full overflow-hidden'>
-        <Image
-          src='/assets/img/PineTreesEdited.png'
-          alt='pineforestimage'
-          sizes='100vw'
-          width={0}
-          height={0}
-          style={{ width: '100%', height: '100%' }}
-          priority
-          className='object-cover'
-        />
-      </div> */}
-
-      {/* <div className='absolute inset-0 bg-gradient-to-tr from-white from-60% opacity-70 z-10'></div> */}
     </main>
   );
 };
