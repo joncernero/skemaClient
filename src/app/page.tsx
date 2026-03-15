@@ -13,14 +13,14 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <div className="mx-auto w-full max-w-full">
-        <ScrollToTop />
+      <div className="relative w-full">
         <Header />
         <Hero />
         <About />
         <Pricing />
         <Reviews />
         <Footer />
+        <ScrollToTop />
       </div>
     </>
   );
