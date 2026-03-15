@@ -52,12 +52,12 @@ const Reviews: React.FC = () => {
   };
 
   return (
-    <div className="relative flex justify-center items-center w-full h-screen overflow-hidden md:p-24">
-      <div className="overflow-hidden w-full">
+    <div className="relative flex justify-center items-center w-full h-screen overflow-hidden px-8 md:px-0">
+      <div className="overflow-hidden w-full max-w-7xl">
         {reviews.map((review, index) => (
           <div
             key={index}
-            className={`px-6 flex flex-col justify-center items-center gap-y-2 ${
+            className={`flex flex-col justify-center items-center gap-y-2 ${
               slideIndex === index + 1 ? "block" : "hidden"
             }`}
           >

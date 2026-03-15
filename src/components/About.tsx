@@ -3,8 +3,8 @@ import Image from 'next/image'
 
 const About = () => {
   return (
-    <section className='about grid place-items-center h-screen py-10 sm:py-16 lg:py-24 bg-gradient-to-b from-[#439cfb] via-[#f187fb] to-white'>
-      <div className='px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
+    <section className='about grid place-items-center h-screen px-8 md:px-0 bg-gradient-to-b from-[#439cfb] via-[#f187fb] to-white'>
+      <div className='mx-auto max-w-7xl'>
         <div className='max-w-2xl mx-auto text-center'>
           <h2 className='text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl'>
             How does it work?
