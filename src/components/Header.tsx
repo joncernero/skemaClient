@@ -1,35 +1,35 @@
-'use client'
+"use client";
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 // import Image from 'next/image';
-import { FaBars } from 'react-icons/fa'
-import { HiArrowSmRight } from 'react-icons/hi'
-import { IoHomeSharp } from 'react-icons/io5'
-import SideBar from '@/components/Sidebar'
-import { ModeToggle } from '@/components/ModeToggle'
+import { FaBars } from "react-icons/fa";
+import { HiArrowSmRight } from "react-icons/hi";
+import { IoHomeSharp } from "react-icons/io5";
+import SideBar from "@/components/Sidebar";
+import { ModeToggle } from "@/components/ModeToggle";
 
 const Header: React.FC = () => {
-  const [isDesktop, setIsDesktop] = useState<boolean>(false)
-  const [open, setOpen] = useState<boolean>(false)
+  const [isDesktop, setIsDesktop] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
 
-  const toggle = (): void => setOpen(prev => !prev)
+  const toggle = (): void => setOpen((prev) => !prev);
 
   useEffect(() => {
     // Check viewport width
     const checkWidth = (): void => {
-      setIsDesktop(window.innerWidth >= 1064)
-    }
+      setIsDesktop(window.innerWidth >= 1064);
+    };
 
-    checkWidth()
-    window.addEventListener('resize', checkWidth)
-    return () => window.removeEventListener('resize', checkWidth)
-  }, [])
+    checkWidth();
+    window.addEventListener("resize", checkWidth);
+    return () => window.removeEventListener("resize", checkWidth);
+  }, []);
 
   return (
-    <div className='h-auto z-50 py-6 lg:px-10 xl:px-5 relative font-bold'>
+    <div className="w-full h-auto z-50 py-6 lg:px-10 xl:px-5 relative font-bold">
       {isDesktop ? (
-        <nav className='flex max-w-7xl mx-auto justify-between items-center transition-opacity duration-500 animate-slide animate-appear'>
-          <div className='z-50 flex items-center gap-x-2'>
+        <nav className="flex max-w-7xl mx-auto justify-between items-center transition-opacity duration-500 animate-slide animate-appear">
+          <div className="z-50 flex items-center gap-x-2">
             {/* <Image
               src='/assets/img/evergreen-jlbs-06 copy.png'
               alt='pineforestimage'
@@ -40,27 +40,27 @@ const Header: React.FC = () => {
               priority
               className='z-40'
             /> */}
-            <h2 className='z-50 text-md'>BUSINESS NAME</h2>
+            <h2 className="z-50 text-md">BUSINESS NAME</h2>
           </div>
 
-          <div className='z-50 flex flex-row items-center gap-x-8'>
-            <ul className='flex gap-x-6'>
-              <li className='hover:text-slate-500 gap-x-2 flex items-center text-sm'>
-                <IoHomeSharp className='size-4' /> HOME
+          <div className="z-50 flex flex-row items-center gap-x-8">
+            <ul className="flex gap-x-6">
+              <li className="hover:text-slate-500 gap-x-2 flex items-center text-sm">
+                <IoHomeSharp className="size-4" /> HOME
               </li>
-              <li className='hover:text-slate-500 text-sm'>ABOUT US</li>
-              <li className='hover:text-slate-500 text-sm'>CONTACT</li>
+              <li className="hover:text-slate-500 text-sm">ABOUT US</li>
+              <li className="hover:text-slate-500 text-sm">CONTACT</li>
             </ul>
-            <button className='flex bg-blue-500 text-sm text-white px-8 py-1  hover:bg-white hover:text-black transition-colors duration-300'>
+            <button className="flex bg-blue-500 text-sm text-white px-8 py-1  hover:bg-white hover:text-black transition-colors duration-300">
               START HERE
-              <HiArrowSmRight className='rotate-45 size-5 ml-2' />
+              <HiArrowSmRight className="rotate-45 size-5 ml-2" />
             </button>
             <ModeToggle />
           </div>
         </nav>
       ) : (
-        <nav className='flex items-center py-2 px-4 justify-between transition-opacity duration-500 animate-slide animate-appear'>
-          <div className='flex items-center'>
+        <nav className="flex items-center py-2 px-4 justify-between transition-opacity duration-500 animate-slide animate-appear">
+          <div className="flex items-center">
             {/* <Image
               src='/assets/img/evergreen-jlbs-06 copy.png'
               alt='evergreen_logo'
@@ -71,16 +71,16 @@ const Header: React.FC = () => {
               priority
               className='z-40'
             /> */}
-            <h2 className='z-40 ml-2'>BUSINESS NAME</h2>
+            <h2 className="z-40 ml-2">BUSINESS NAME</h2>
           </div>
 
-          <FaBars onClick={toggle} className='w-8 h-auto cursor-pointer' />
+          <FaBars onClick={toggle} className="w-8 h-auto cursor-pointer" />
         </nav>
       )}
 
       {open && <SideBar toggle={toggle} />}
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

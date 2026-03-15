@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
   const fadeBase = 'transition-all duration-700 ease-out'
 
   return (
-    <main className='relative w-full h-screen md:max-h-[950px] flex items-center justify-center overflow-hidden'>
+    <main className='relative w-full h-screen flex items-center justify-center overflow-hidden'>
       <div className='absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)]'></div>
 
       <div className='w-full max-w-7xl flex flex-col gap-12'>
