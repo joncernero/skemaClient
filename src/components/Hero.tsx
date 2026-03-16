@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
   const fadeBase = 'transition-all duration-700 ease-out'
 
   return (
-    <main className='relative w-full h-screen flex items-center justify-center overflow-hidden'>
+    <main className='relative w-full h-screen flex items-center justify-center overflow-hidden px-8'>
       <div className='absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)]'></div>
 
       <div className='w-full max-w-7xl flex flex-col gap-12'>
@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
         <p
           className={`${fadeBase} delay-300 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-          } text-center text-md md:text-lg font-bold text-blue-400 max-w-2xl mx-auto leading-relaxed`}>
+          } text-center text-md md:text-lg font-bold text-blue-400 w-full max-w-2xl mx-auto leading-relaxed`}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
           quibusdam facilis? Libero unde modi totam.
         </p>

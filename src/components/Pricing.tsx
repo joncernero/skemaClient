@@ -1,8 +1,8 @@
 export default function Pricing() {
   return (
-    <div className="grid w-full h-screen bg-white place-items-center">
-      <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:items-center md:gap-8">
+    <div className="grid w-full h-screen bg-white place-items-center px-8 md:px-0">
+      <div className="mx-auto w-full max-w-3xl">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:items-center">
           <div className="rounded-2xl border border-indigo-600 p-6 shadow-xs ring-1 ring-indigo-600 sm:order-last sm:px-8 lg:p-12">
             <div className="text-center">
               <h2 className="text-lg font-medium text-gray-900">
