@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Stats from "@/components/Stats";
 // import Reviews from "@/components/Reviews";
 import Pricing from "@/components/Pricing";
 import ScrollToTop from "@/components/ui/ScrollToTop";
@@ -17,6 +18,7 @@ export default function Home() {
         <Header />
         <Hero />
         <About />
+        <Stats />
         <Pricing />
         {/* <Reviews /> */}
         <Footer />
