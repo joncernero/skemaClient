@@ -27,7 +27,7 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full h-auto z-50 pt-6 lg:px-10 xl:px-5 relative font-bold">
+    <div className="w-full h-auto z-50 py-4 lg:px-10 xl:px-5 relative font-bold">
       {isDesktop ? (
         <nav className="flex max-w-7xl mx-auto justify-between items-center transition-opacity duration-500 animate-slide animate-appear">
           <div className="z-50 flex items-center gap-x-2">

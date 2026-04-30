@@ -1,4 +1,18 @@
+<<<<<<< HEAD
 import { FiCheck, FiMonitor, FiCode, FiRefreshCw } from 'react-icons/fi'
+=======
+export default function Pricing() {
+  return (
+    <div className="grid w-full h-screen bg-white place-items-center px-8 md:px-0">
+      <div className="mx-auto w-full max-w-3xl">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:items-center">
+          <div className="rounded-2xl border border-indigo-600 p-6 shadow-xs ring-1 ring-indigo-600 sm:order-last sm:px-8 lg:p-12">
+            <div className="text-center">
+              <h2 className="text-lg font-medium text-gray-900">
+                Pro
+                <span className="sr-only">Plan</span>
+              </h2>
+>>>>>>> cfd36aa9e3f211a26dbfcf82e032fd7dbd59c91d
 
 const CheckItem = ({ text }: { text: string }) => (
   <li className="flex items-start gap-2">
