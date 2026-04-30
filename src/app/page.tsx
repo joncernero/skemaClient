@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Reviews from "@/components/Reviews";
+// import Reviews from "@/components/Reviews";
 import Pricing from "@/components/Pricing";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import Header from "@/components/Header";
@@ -19,7 +19,7 @@ export default function Home() {
         <Hero />
         <About />
         <Pricing />
-        <Reviews />
+        {/* <Reviews /> */}
         <Footer />
       </div>
     </>

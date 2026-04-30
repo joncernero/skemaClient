@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
 
   return (
     <main className='relative w-full h-screen flex items-center justify-center overflow-hidden'>
-      <div className='absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)]'></div>
+      <div className='absolute h-full w-full bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)]'></div>
 
       <div className='w-full max-w-7xl flex flex-col gap-12'>
         <p
@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
           } text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-center flex flex-col text-slate-750`}>
           <span
             key={index}
-            className={`inline-block text-blue-500 transition-all duration-600 ease-out ${
+            className={`inline-block text-blue-500 transition-all duration-500 ease-out ${
               wordVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 -translate-y-4'
@@ -66,9 +66,8 @@ const Hero: React.FC = () => {
         <p
           className={`${fadeBase} delay-300 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-          } text-center text-md md:text-lg font-bold text-blue-400 max-w-2xl mx-auto leading-relaxed`}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
-          quibusdam facilis? Libero unde modi totam.
+          } text-center text-lg md:text-2xl font-bold max-w-3xl mx-auto leading-tight`}>
+          AT BLACK WREN DIGITAL WE WANT TO HELP YOU UTILIZE TECHNOLOGIES TO HELP YOU MEET YOUR BUSINESS GOALS. .
         </p>
 
         <div className='z-40 flex w-full gap-x-2 justify-center'>

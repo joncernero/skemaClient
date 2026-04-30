@@ -4,6 +4,7 @@ import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { IoHomeSharp } from 'react-icons/io5'
 import * as BsIcons from 'react-icons/bs'
+import Link from 'next/link'
 // import Image from 'next/image';
 
 interface SideBarProps {
@@ -34,13 +35,15 @@ const SideBar: React.FC<SideBarProps> = ({ toggle }) => {
         </li>
 
         <li className='hover:text-slate-500 text-black font-bold flex items-center gap-x-2 text-base z-50'>
-          <IoHomeSharp className='w-5 h-auto' /> HOME
+          <Link href='/' onClick={toggle} className='flex items-center gap-x-2'>
+            <IoHomeSharp className='w-5 h-auto' /> HOME
+          </Link>
         </li>
         <li className='hover:text-slate-500 text-black font-bold z-50'>
-          ABOUT US
+          <Link href='/about' onClick={toggle}>ABOUT US</Link>
         </li>
         <li className='hover:text-slate-500 text-black font-bold z-50'>
-          CONTACT
+          <Link href='/contact' onClick={toggle}>CONTACT</Link>
         </li>
 
         <div className='flex flex-row gap-x-4 mt-20'>

@@ -40,7 +40,7 @@ const ScrollToTop: React.FC = () => {
           e.preventDefault();
           scrollToTop();
         }}
-        className='p-4 rounded-full flex justify-center items-center transition-opacity duration-300'>
+        className='p-4 rounded-full flex justify-center items-center bg-blue-500 hover:bg-blue-600 text-white transition-colors duration-300'>
         <FaChevronUp className='text-lg' />
       </a>
     </motion.div>
