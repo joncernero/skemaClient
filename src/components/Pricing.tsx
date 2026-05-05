@@ -3,7 +3,7 @@ import { FiCheck, FiMonitor, FiCode, FiRefreshCw } from 'react-icons/fi'
 const CheckItem = ({ text }: { text: string }) => (
   <li className="flex items-start gap-2">
     <FiCheck className="mt-1 w-4 h-4 text-blue-500 shrink-0" />
-    <span className="text-sm text-gray-600 dark:text-gray-300">{text}</span>
+    <span className="text-sm text-gray-700 dark:text-gray-300">{text}</span>
   </li>
 )
 
@@ -33,11 +33,11 @@ const ServiceCard = ({
         {icon}
       </div>
       <div>
-        <h3 className="text-xl font-bold">{title}</h3>
+        <h3 className="text-xl font-bold text-slate-800 dark:text-white">{title}</h3>
         <p className="text-blue-500 font-bold text-lg">{priceLabel}</p>
       </div>
     </div>
-    <p className="text-sm text-gray-500 dark:text-gray-400">{description}</p>
+    <p className="text-sm text-gray-600 dark:text-gray-400">{description}</p>
     <ul className="space-y-2 flex-1">
       {features.map((f, i) => (
         <CheckItem key={i} text={f} />
@@ -57,13 +57,13 @@ const ServiceCard = ({
 
 export default function Pricing() {
   return (
-    <div className="w-full bg-gray-50 dark:bg-gray-950 h-screen py-10 sm:py-16 lg:py-24 grid place-items-center">
+    <div id="pricing" className="w-full bg-gray-50 dark:bg-gray-950 min-h-screen py-10 sm:py-16 lg:py-24 grid place-items-center">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 space-y-12">
 
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Services & Pricing</h1>
-          <p className="mt-4 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-800 dark:text-white">Services & Pricing</h1>
+          <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Every project is custom-built to fit your goals. Reach out for a free consultation and we'll find the right solution for your business.
           </p>
         </div>
@@ -119,7 +119,7 @@ export default function Pricing() {
         </div>
 
         {/* Footer note */}
-        <p className="text-center text-sm text-gray-400 dark:text-gray-500">
+        <p className="text-center text-sm text-gray-500 dark:text-gray-400">
           Not sure where to start? <a href="#contact" className="text-blue-500 hover:underline font-medium">Let's talk</a> — we'll help you figure out the right fit.
         </p>
 

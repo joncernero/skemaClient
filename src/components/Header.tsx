@@ -52,10 +52,13 @@ const Header: React.FC = () => {
                 </Link>
               </li>
               <li className="hover:text-slate-500 text-sm">
-                <Link href="/about">ABOUT US</Link>
+                <a href="#about" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}>ABOUT US</a>
               </li>
               <li className="hover:text-slate-500 text-sm">
-                <Link href="/contact">CONTACT</Link>
+                <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); }}>PRICING</a>
+              </li>
+              <li className="hover:text-slate-500 text-sm">
+                <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>CONTACT</a>
               </li>
             </ul>
             <button className="flex bg-blue-500 text-sm text-white px-8 py-1  hover:bg-white hover:text-black transition-colors duration-300">

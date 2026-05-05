@@ -3,12 +3,13 @@ import About from "@/components/About";
 import Stats from "@/components/Stats";
 // import Reviews from "@/components/Reviews";
 import Pricing from "@/components/Pricing";
+import Contact from "@/components/Contact";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Home",
+  title: "Black Wren Digital | Home",
 };
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <Stats />
         <Pricing />
         {/* <Reviews /> */}
+        <Contact />
         <Footer />
         <ScrollToTop />
       </div>

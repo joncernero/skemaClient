@@ -1,3 +1,12 @@
+import { FiMapPin, FiZap, FiSliders, FiShield } from 'react-icons/fi'
+
+const pillars = [
+  { icon: <FiMapPin className='w-5 h-5 text-blue-500' />, title: 'Local', desc: 'Indianapolis-based, invested in your community' },
+  { icon: <FiZap className='w-5 h-5 text-blue-500' />, title: 'Fast', desc: 'Quick turnarounds without sacrificing quality' },
+  { icon: <FiSliders className='w-5 h-5 text-blue-500' />, title: 'Custom', desc: 'Built for how your business actually works' },
+  { icon: <FiShield className='w-5 h-5 text-blue-500' />, title: 'Reliable', desc: 'Agency accountability at freelancer pricing' },
+]
+
 const stats = [
   {
     value: '75%',
@@ -30,8 +39,47 @@ const references = [
 
 export default function Stats() {
   return (
-    <section className='w-full bg-white dark:bg-gray-900 py-12 px-4 border-t border-b border-gray-100 dark:border-gray-800'>
+    <section className='w-full bg-white dark:bg-gray-900 min-h-screen grid place-items-center px-4 py-10 sm:py-16 lg:py-24 border-t border-b border-gray-100 dark:border-gray-800'>
       <div className='max-w-7xl mx-auto'>
+
+        {/* Split left/right statement */}
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start mb-8 md:mb-16 pb-8 md:pb-16 border-b border-gray-100 dark:border-gray-800'>
+          <div>
+            <p className='text-3xl md:text-4xl font-bold leading-tight text-slate-800 dark:text-white'>
+              We build digital tools that{' '}
+              <span className='text-blue-500'>work as hard as you do.</span>
+            </p>
+            <div className='w-10 h-1 bg-blue-500 rounded mt-6 mb-8'></div>
+            <div className='grid grid-cols-2 gap-4'>
+              {pillars.map((p, i) => (
+                <div key={i} className='flex items-start gap-3 p-4 rounded-xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800'>
+                  <div className='mt-0.5'>{p.icon}</div>
+                  <div>
+                    <p className='font-bold text-sm text-slate-700 dark:text-white'>{p.title}</p>
+                    <p className='text-xs text-gray-400 dark:text-gray-400 mt-0.5 leading-snug'>{p.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className='md:pt-2'>
+            <p className='text-base text-gray-500 dark:text-gray-400 leading-relaxed'>
+              Most businesses don't need a massive agency or an unreliable freelancer — they need a focused partner who understands both technology and real-world operations. That's what Black Wren Digital is built to be.
+            </p>
+            <p className='text-base text-gray-500 dark:text-gray-400 leading-relaxed mt-4'>
+              Whether you're launching your first website, connecting your tools through a custom API, or building an application to streamline how your team works — we start with your goals and build toward them. No bloated proposals, no cookie-cutter templates, no hand-offs to junior developers overseas.
+            </p>
+            <p className='text-base text-gray-500 dark:text-gray-400 leading-relaxed mt-4'>
+              From Indianapolis, we serve businesses that want more than a digital presence — they want a digital advantage.
+            </p>
+            <a
+              href='#contact'
+              className='inline-flex items-center mt-8 bg-blue-500 hover:bg-blue-600 text-white font-bold px-8 py-3 rounded-full transition-colors duration-300'>
+              Get a Free Consultation
+              <span className='ml-2'>→</span>
+            </a>
+          </div>
+        </div>
 
         {/* Header */}
         <p className='text-center font-bold text-sm tracking-widest text-gray-400 uppercase mb-10'>

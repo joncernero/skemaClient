@@ -4,6 +4,7 @@ import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { IoHomeSharp } from 'react-icons/io5'
 import * as BsIcons from 'react-icons/bs'
+import { FaGoogle } from 'react-icons/fa'
 import Link from 'next/link'
 // import Image from 'next/image';
 
@@ -40,21 +41,21 @@ const SideBar: React.FC<SideBarProps> = ({ toggle }) => {
           </Link>
         </li>
         <li className='hover:text-slate-500 text-black font-bold z-50'>
-          <Link href='/about' onClick={toggle}>ABOUT US</Link>
+          <a href='#about' onClick={(e) => { e.preventDefault(); toggle(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}>ABOUT US</a>
         </li>
         <li className='hover:text-slate-500 text-black font-bold z-50'>
-          <Link href='/contact' onClick={toggle}>CONTACT</Link>
+          <a href='#pricing' onClick={(e) => { e.preventDefault(); toggle(); document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); }}>PRICING</a>
+        </li>
+        <li className='hover:text-slate-500 text-black font-bold z-50'>
+          <a href='#contact' onClick={(e) => { e.preventDefault(); toggle(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>CONTACT</a>
         </li>
 
         <div className='flex flex-row gap-x-4 mt-20'>
           <li className='z-50'>
-            <BsIcons.BsFacebook className='hover:text-slate-500 w-5 h-auto' />
-          </li>
-          <li className='z-50'>
             <BsIcons.BsLinkedin className='hover:text-slate-500 w-5 h-auto' />
           </li>
           <li className='z-50'>
-            <BsIcons.BsInstagram className='hover:text-slate-500 w-5 h-auto' />
+            <FaGoogle className='hover:text-slate-500 w-5 h-auto' />
           </li>
         </div>
       </ul>

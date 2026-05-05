@@ -4,7 +4,7 @@ import { FiMonitor, FiDatabase, FiCode } from 'react-icons/fi'
 
 const About = () => {
   return (
-    <section className='about grid place-items-center h-screen py-10 sm:py-16 lg:py-24 bg-gradient-to-b from-[#439cfb] via-[#f187fb] to-white'>
+    <section id='about' className='about grid place-items-center h-screen py-10 sm:py-16 lg:py-24 bg-gradient-to-b from-[#439cfb] via-[#f187fb] to-white'>
       <div className='px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
         <div className='max-w-4xl mx-auto text-center'>
           <h2 className='text-4xl font-bold leading-tight sm:text-4xl lg:text-5xl'>

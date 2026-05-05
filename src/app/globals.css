@@ -119,6 +119,10 @@
   --sidebar-ring: oklch(0.446 0.03 256.802);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import * as BsIcons from 'react-icons/bs'
+import { FaGoogle } from 'react-icons/fa'
 // import Image from 'next/image';
 import { HiArrowSmRight } from 'react-icons/hi'
 // import { cn } from '@/lib/utils';
@@ -39,7 +40,7 @@ const Hero: React.FC = () => {
     <main className='relative w-full h-screen flex items-center justify-center overflow-hidden'>
       <div className='absolute h-full w-full bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)]'></div>
 
-      <div className='w-full max-w-7xl flex flex-col gap-12'>
+      <div className='w-full max-w-7xl flex flex-col gap-6 md:gap-12 px-4'>
         <p
           className={`${fadeBase} delay-300 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
@@ -50,7 +51,7 @@ const Hero: React.FC = () => {
         <h1
           className={`${fadeBase} delay-200 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-          } text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-center flex flex-col text-slate-750`}>
+          } text-4xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-center flex flex-col text-slate-750`}>
           <span
             key={index}
             className={`inline-block text-blue-500 transition-all duration-500 ease-out ${
@@ -66,7 +67,7 @@ const Hero: React.FC = () => {
         <p
           className={`${fadeBase} delay-300 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-          } text-center text-lg md:text-2xl font-bold max-w-3xl mx-auto leading-tight`}>
+          } text-center text-base md:text-2xl font-bold max-w-3xl mx-auto leading-tight`}>
           We solve your digital challenges providing thoughtful solutions that drive real results. At Black Wren Digital we're dedicated to helping your business thrive in the digital age.
         </p>
 
@@ -83,9 +84,8 @@ const Hero: React.FC = () => {
           className={`${fadeBase} delay-500 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
           } flex flex-row gap-3 items-center justify-center z-40`}>
-          <BsIcons.BsFacebook className='hover:text-slate-500 w-5 h-5' />
           <BsIcons.BsLinkedin className='hover:text-slate-500 w-5 h-5' />
-          <BsIcons.BsInstagram className='hover:text-slate-500 w-5 h-5' />
+          <FaGoogle className='hover:text-slate-500 w-5 h-5' />
         </div>
       </div>
 

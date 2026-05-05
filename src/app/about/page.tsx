@@ -1,7 +1,5 @@
-export const metadata = {
-  title: 'About',
-};
+import { redirect } from 'next/navigation'
 
 export default function About() {
-  return <h2>About</h2>;
+  redirect('/#about')
 }
