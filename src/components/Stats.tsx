@@ -1,10 +1,10 @@
 import { FiMapPin, FiZap, FiSliders, FiShield } from 'react-icons/fi'
 
 const pillars = [
-  { icon: <FiMapPin className='w-5 h-5 text-blue-500' />, title: 'Local', desc: 'Indianapolis-based, invested in your community' },
-  { icon: <FiZap className='w-5 h-5 text-blue-500' />, title: 'Fast', desc: 'Quick turnarounds without sacrificing quality' },
-  { icon: <FiSliders className='w-5 h-5 text-blue-500' />, title: 'Custom', desc: 'Built for how your business actually works' },
-  { icon: <FiShield className='w-5 h-5 text-blue-500' />, title: 'Reliable', desc: 'Agency accountability at freelancer pricing' },
+  { icon: <FiMapPin className='w-5 h-5 text-blue-500' aria-hidden='true' />, title: 'Local', desc: 'Indianapolis-based, invested in your community' },
+  { icon: <FiZap className='w-5 h-5 text-blue-500' aria-hidden='true' />, title: 'Fast', desc: 'Quick turnarounds without sacrificing quality' },
+  { icon: <FiSliders className='w-5 h-5 text-blue-500' aria-hidden='true' />, title: 'Custom', desc: 'Built for how your business actually works' },
+  { icon: <FiShield className='w-5 h-5 text-blue-500' aria-hidden='true' />, title: 'Reliable', desc: 'Agency accountability at freelancer pricing' },
 ]
 
 const stats = [
@@ -107,6 +107,7 @@ export default function Stats() {
               <sup>{ref.num}</sup> {ref.text}{' '}
               <a href={ref.link} target='_blank' rel='noopener noreferrer' className='underline hover:text-blue-500 transition-colors'>
                 {ref.label}
+                <span className='sr-only'> (opens in new tab)</span>
               </a>
             </p>
           ))}

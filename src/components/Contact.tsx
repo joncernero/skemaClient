@@ -16,25 +16,28 @@ const services = [
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
+    setError(null)
 
     const form = e.currentTarget
     const data = new FormData(form)
 
-    // Replace 'YOUR_FORM_ID' with your Formspree form ID
-    const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    const res = await fetch('/api/contact', {
       method: 'POST',
       body: data,
-      headers: { Accept: 'application/json' },
     })
 
     setLoading(false)
     if (res.ok) {
       setSubmitted(true)
       form.reset()
+    } else {
+      const json = await res.json().catch(() => ({}))
+      setError(json.error ?? 'Something went wrong. Please try again.')
     }
   }
 
@@ -61,7 +64,7 @@ export default function Contact() {
           <div className='flex flex-col gap-5'>
             <div className='flex items-center gap-4'>
               <div className='flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900 text-blue-500 shrink-0'>
-                <FiMail className='w-4 h-4' />
+                <FiMail className='w-4 h-4' aria-hidden='true' />
               </div>
               <div>
                 <p className='text-xs text-gray-400 font-medium uppercase tracking-wide'>Email</p>
@@ -73,7 +76,7 @@ export default function Contact() {
 
             <div className='flex items-center gap-4'>
               <div className='flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900 text-blue-500 shrink-0'>
-                <FiMapPin className='w-4 h-4' />
+                <FiMapPin className='w-4 h-4' aria-hidden='true' />
               </div>
               <div>
                 <p className='text-xs text-gray-400 font-medium uppercase tracking-wide'>Location</p>
@@ -83,7 +86,7 @@ export default function Contact() {
 
             <div className='flex items-center gap-4'>
               <div className='flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900 text-blue-500 shrink-0'>
-                <FiClock className='w-4 h-4' />
+                <FiClock className='w-4 h-4' aria-hidden='true' />
               </div>
               <div>
                 <p className='text-xs text-gray-400 font-medium uppercase tracking-wide'>Response Time</p>
@@ -105,9 +108,9 @@ export default function Contact() {
         {/* Right — Form */}
         <div className='bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-100 dark:border-gray-700'>
           {submitted ? (
-            <div className='flex flex-col items-center justify-center h-full gap-4 py-16 text-center'>
+            <div role='status' aria-live='polite' className='flex flex-col items-center justify-center h-full gap-4 py-16 text-center'>
               <div className='w-14 h-14 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center'>
-                <FiSend className='w-6 h-6 text-blue-500' />
+                <FiSend className='w-6 h-6 text-blue-500' aria-hidden='true' />
               </div>
               <h3 className='text-xl font-bold text-slate-800 dark:text-white'>Message Sent!</h3>
               <p className='text-gray-500 dark:text-gray-400 text-sm max-w-xs'>
@@ -178,12 +181,16 @@ export default function Contact() {
                 />
               </div>
 
+              {error && (
+                <p role='alert' aria-live='assertive' className='text-sm text-red-500 text-center'>{error}</p>
+              )}
+
               <button
                 type='submit'
                 disabled={loading}
                 className='flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 disabled:opacity-60 text-white font-bold px-8 py-3 rounded-full transition-colors duration-300'>
                 {loading ? 'Sending...' : (
-                  <><FiSend className='w-4 h-4' /> Send Message</>
+                  <><FiSend className='w-4 h-4' aria-hidden='true' /> Send Message</>
                 )}
               </button>
 

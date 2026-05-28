@@ -19,7 +19,8 @@ const About = () => {
             <Image
               className='w-full'
               src='https://cdn.rareblocks.xyz/collection/celebration/images/steps/2/curved-dotted-line.svg'
-              alt='dottedline'
+              alt=''
+              role='presentation'
               width={0}
               height={0}
               priority
@@ -39,9 +40,9 @@ const About = () => {
           <div className='relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12'>
             <div>
               <div className='flex items-center justify-center w-20 h-20 mx-auto bg-white border-2 border-gray-200 rounded-full shadow'>
-                <FiMonitor className='w-10 h-10 text-blue-500' />
+                <FiMonitor className='w-10 h-10 text-blue-500' aria-hidden='true' />
               </div>
-              <h3 className='mt-6 text-xl font-semibold leading-tight text-black md:mt-10'>
+              <h3 className='mt-6 text-xl font-semibold leading-tight text-slate-800 dark:text-white md:mt-10'>
                 BUILD A WEBSITE
               </h3>
               <p className='mt-4 text-base text-gray-600'>
@@ -51,9 +52,9 @@ const About = () => {
 
             <div>
               <div className='flex items-center justify-center w-20 h-20 mx-auto bg-white border-2 border-gray-200 rounded-full shadow'>
-                <FiDatabase className='w-10 h-10 text-blue-500' />
+                <FiDatabase className='w-10 h-10 text-blue-500' aria-hidden='true' />
               </div>
-              <h3 className='mt-6 text-xl font-semibold leading-tight text-black md:mt-10'>
+              <h3 className='mt-6 text-xl font-semibold leading-tight text-slate-800 dark:text-white md:mt-10'>
                 API's & DATA FEEDS
               </h3>
               <p className='mt-4 text-base text-gray-600'>
@@ -63,9 +64,9 @@ const About = () => {
 
             <div>
               <div className='flex items-center justify-center w-20 h-20 mx-auto bg-white border-2 border-gray-200 rounded-full shadow'>
-                <FiCode className='w-10 h-10 text-blue-500' />
+                <FiCode className='w-10 h-10 text-blue-500' aria-hidden='true' />
               </div>
-              <h3 className='mt-6 text-xl font-semibold leading-tight text-black md:mt-10'>
+              <h3 className='mt-6 text-xl font-semibold leading-tight text-slate-800 dark:text-white md:mt-10'>
                 CUSTOM APPLICATIONS
               </h3>
               <p className='mt-4 text-base text-gray-600'>

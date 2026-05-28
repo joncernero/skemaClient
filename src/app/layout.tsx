@@ -15,10 +15,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Business Name',
-    default: 'Business Name'
+    template: '%s | Black Wren Digital',
+    default: 'Black Wren Digital'
   },
-  description: 'A Web Solutions Company'
+  description: 'Black Wren Digital builds fast, modern websites, APIs, and custom web applications for businesses in Indianapolis and beyond.'
 }
 
 export default function RootLayout({
@@ -30,6 +30,11 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <a
+          href='#main-content'
+          className='sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-blue-500 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:font-bold'>
+          Skip to main content
+        </a>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'

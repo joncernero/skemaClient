@@ -1,10 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import * as BsIcons from 'react-icons/bs'
-import { FaGoogle } from 'react-icons/fa'
-// import Image from 'next/image';
 import { HiArrowSmRight } from 'react-icons/hi'
-// import { cn } from '@/lib/utils';
 
 const words: string[] = [
   'AFFORDABLE',
@@ -37,8 +33,12 @@ const Hero: React.FC = () => {
   const fadeBase = 'transition-all duration-700 ease-out'
 
   return (
-    <main className='relative w-full h-screen flex items-center justify-center overflow-hidden'>
-      <div className='absolute h-full w-full bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)]'></div>
+    <main id='main-content' className='relative w-full h-screen flex items-center justify-center overflow-hidden'>
+      {/* Decorative dot pattern — hidden from assistive tech */}
+      <div
+        aria-hidden='true'
+        className='absolute h-full w-full bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_40%,transparent_100%)]'
+      />
 
       <div className='w-full max-w-7xl flex flex-col gap-6 md:gap-12 px-4'>
         <p
@@ -52,7 +52,10 @@ const Hero: React.FC = () => {
           className={`${fadeBase} delay-200 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
           } text-4xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-center flex flex-col text-slate-750`}>
+          {/* aria-live announces the changing word to screen readers */}
           <span
+            aria-live='polite'
+            aria-atomic='true'
             key={index}
             className={`inline-block text-blue-500 transition-all duration-500 ease-out ${
               wordVisible
@@ -72,37 +75,16 @@ const Hero: React.FC = () => {
         </p>
 
         <div className='z-40 flex w-full gap-x-2 justify-center'>
-          <button
-            className={`${fadeBase}  ${
+          <a
+            href='#contact'
+            onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
+            className={`${fadeBase} ${
               mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-            } flex bg-blue-500 text-white px-10 py-2 hover:bg-white hover:text-black transition-colors duration-300 font-bold`}>
-            START HERE <HiArrowSmRight className='rotate-45 size-5 ml-1' />
-          </button>
-        </div>
-
-        <div
-          className={`${fadeBase} delay-500 ${
-            mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-          } flex flex-row gap-3 items-center justify-center z-40`}>
-          <BsIcons.BsLinkedin className='hover:text-slate-500 w-5 h-5' />
-          <FaGoogle className='hover:text-slate-500 w-5 h-5' />
+            } flex items-center bg-blue-500 text-white px-10 py-2 hover:bg-white hover:text-black transition-colors duration-300 font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2`}>
+            GET STARTED <HiArrowSmRight className='rotate-45 size-5 ml-1' aria-hidden='true' />
+          </a>
         </div>
       </div>
-
-      {/* <div className='absolute inset-0 h-screen w-full overflow-hidden'>
-        <Image
-          src='/assets/img/PineTreesEdited.png'
-          alt='pineforestimage'
-          sizes='100vw'
-          width={0}
-          height={0}
-          style={{ width: '100%', height: '100%' }}
-          priority
-          className='object-cover'
-        />
-      </div> */}
-
-      {/* <div className='absolute inset-0 bg-gradient-to-tr from-white from-60% opacity-70 z-10'></div> */}
     </main>
   )
 }

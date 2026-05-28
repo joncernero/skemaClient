@@ -31,17 +31,20 @@ const ScrollToTop: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: visible ? 1 : 0 }}
       transition={{ duration: 0.4, ease: 'easeInOut' }}
+      aria-hidden={!visible}
       className={`${
         visible ? 'visible' : 'invisible'
       } fixed bottom-10 right-10 z-50 rounded-full`}>
       <a
-        href='#'
+        href='#main-content'
+        aria-label='Scroll to top'
+        tabIndex={visible ? 0 : -1}
         onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
           e.preventDefault();
           scrollToTop();
         }}
-        className='p-4 rounded-full flex justify-center items-center bg-blue-500 hover:bg-blue-600 text-white transition-colors duration-300'>
-        <FaChevronUp className='text-lg' />
+        className='p-4 rounded-full flex justify-center items-center bg-blue-500 hover:bg-blue-600 text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-500'>
+        <FaChevronUp className='text-lg' aria-hidden='true' />
       </a>
     </motion.div>
   );
