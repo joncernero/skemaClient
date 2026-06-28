@@ -1,6 +1,6 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import React, { useState, useEffect } from "react";
-import { HiArrowSmRight } from "react-icons/hi";
 
 const words: string[] = [
   "AFFORDABLE",
@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
         <p
           className={`${fadeBase} delay-300 ${
             mounted ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
-          } text-center text-lg font-bold md:text-2xl`}
+          } text-center text-xl font-bold`}
         >
           BRING YOUR COMPANY FORWARD
         </p>
@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
         <h1
           className={`${fadeBase} delay-200 ${
             mounted ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
-          } text-slate-750 flex flex-col text-center text-4xl font-bold tracking-tighter md:text-7xl lg:text-8xl`}
+          } text-slate-750 flex flex-col text-center text-4xl font-extrabold lg:text-6xl`}
         >
           {/* aria-live announces the changing word to screen readers */}
           <span
@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
         <p
           className={`${fadeBase} delay-300 ${
             mounted ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
-          } mx-auto max-w-3xl text-center text-base leading-tight font-bold md:text-2xl`}
+          } mx-auto max-w-xl text-center text-lg leading-tight font-bold`}
         >
           We solve your digital challenges providing thoughtful solutions that
           drive real results. At Black Wren Digital we&apos;re dedicated to
@@ -92,15 +92,8 @@ const Hero: React.FC = () => {
                 .getElementById("contact")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className={`${fadeBase} ${
-              mounted ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
-            } flex items-center bg-blue-500 px-10 py-2 font-bold text-white transition-colors duration-300 hover:bg-white hover:text-black focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:outline-none`}
           >
-            Get Started{" "}
-            <HiArrowSmRight
-              className="ml-1 size-5 rotate-45"
-              aria-hidden="true"
-            />
+            <Button variant="default">Get Started </Button>
           </a>
         </div>
       </div>

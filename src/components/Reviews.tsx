@@ -52,16 +52,16 @@ const Reviews: React.FC = () => {
   };
 
   return (
-    <div className="relative flex justify-center items-center w-full h-screen overflow-hidden px-8 md:px-0">
-      <div className="overflow-hidden w-full max-w-7xl">
+    <div className="relative flex h-screen w-full items-center justify-center overflow-hidden px-8 md:px-0">
+      <div className="w-full max-w-7xl overflow-hidden">
         {reviews.map((review, index) => (
           <div
             key={index}
-            className={`flex flex-col justify-center items-center gap-y-2 ${
+            className={`flex flex-col items-center justify-center gap-y-2 ${
               slideIndex === index + 1 ? "block" : "hidden"
             }`}
           >
-            <p className="text-2xl md:text-3xl py-12 px-5 text-center font-bold tracking-tight leading-normal">
+            <p className="px-5 py-12 text-center text-2xl leading-normal font-bold tracking-tight md:text-3xl">
               &ldquo;{review.review}&rdquo;
             </p>
             <div className="group flex items-center">
@@ -72,21 +72,21 @@ const Reviews: React.FC = () => {
                 width={50}
                 height={50}
                 priority
-                className="shrink-0 h-12 w-12 rounded-full"
+                className="h-12 w-12 shrink-0 rounded-full"
               />
               <div className="mx-3">
-                <p className="text-sm md:text-2xl font-semibold group-hover:text-slate-500">
+                <p className="text-sm font-semibold group-hover:text-slate-500 md:text-2xl">
                   {review.name}
                 </p>
-                <p className="text-sm md:text-2xl font-semibold group-hover:text-slate-500">
+                <p className="text-sm font-semibold group-hover:text-slate-500 md:text-2xl">
                   {review.company}
                 </p>
               </div>
             </div>
-            <p className="text-blue-500 text-sm">{"★".repeat(review.rating)}</p>
+            <p className="text-sm text-blue-500">{"★".repeat(review.rating)}</p>
           </div>
         ))}
-        <div className="flex justify-center space-x-2 mt-5">
+        <div className="mt-5 flex justify-center space-x-2">
           {reviews.map((_, index) => (
             <button
               key={index}
