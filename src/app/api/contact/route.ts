@@ -1,30 +1,30 @@
-import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest) {
   try {
-    const formData = await req.formData()
+    const formData = await req.formData();
 
-    const name    = formData.get('name')    as string
-    const email   = formData.get('email')   as string
-    const phone   = formData.get('phone')   as string | null
-    const service = formData.get('service') as string
-    const message = formData.get('message') as string
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string | null;
+    const service = formData.get("service") as string;
+    const message = formData.get("message") as string;
 
     if (!name || !email || !service || !message) {
       return NextResponse.json(
-        { error: 'Missing required fields.' },
-        { status: 400 }
-      )
+        { error: "Missing required fields." },
+        { status: 400 },
+      );
     }
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: "gmail",
       auth: {
         user: process.env.MAIL_USER,
         pass: process.env.MAIL_PASS,
       },
-    })
+    });
 
     await transporter.sendMail({
       from: `"Black Wren Digital Contact" <${process.env.MAIL_USER}>`,
@@ -43,11 +43,15 @@ export async function POST(req: NextRequest) {
               <td style="padding: 8px 0; font-weight: bold;">Email</td>
               <td style="padding: 8px 0;"><a href="mailto:${email}">${email}</a></td>
             </tr>
-            ${phone ? `
+            ${
+              phone
+                ? `
             <tr>
               <td style="padding: 8px 0; font-weight: bold;">Phone</td>
               <td style="padding: 8px 0;">${phone}</td>
-            </tr>` : ''}
+            </tr>`
+                : ""
+            }
             <tr>
               <td style="padding: 8px 0; font-weight: bold;">Service</td>
               <td style="padding: 8px 0;">${service}</td>
@@ -62,14 +66,14 @@ export async function POST(req: NextRequest) {
           </p>
         </div>
       `,
-    })
+    });
 
-    return NextResponse.json({ success: true }, { status: 200 })
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch (err) {
-    console.error('Contact form error:', err)
+    console.error("Contact form error:", err);
     return NextResponse.json(
-      { error: 'Failed to send message. Please try again.' },
-      { status: 500 }
-    )
+      { error: "Failed to send message. Please try again." },
+      { status: 500 },
+    );
   }
 }

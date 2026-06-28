@@ -1,207 +1,270 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { FiMail, FiMapPin, FiClock, FiSend } from 'react-icons/fi'
-import { BsLinkedin } from 'react-icons/bs'
-import { FaGoogle } from 'react-icons/fa'
+import { useState } from "react";
+import { FiMail, FiMapPin, FiClock, FiSend } from "react-icons/fi";
+import { BsLinkedin } from "react-icons/bs";
+import { FaGoogle } from "react-icons/fa";
 
 const services = [
-  'Website Package',
-  'App Development',
-  'API & Data Feeds',
-  'Monthly Retainer',
-  'Not sure yet',
-]
+  "Website Package",
+  "App Development",
+  "API & Data Feeds",
+  "Monthly Retainer",
+  "Not sure yet",
+];
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setLoading(true)
-    setError(null)
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
 
-    const form = e.currentTarget
-    const data = new FormData(form)
+    const form = e.currentTarget;
+    const data = new FormData(form);
 
-    const res = await fetch('/api/contact', {
-      method: 'POST',
+    const res = await fetch("/api/contact", {
+      method: "POST",
       body: data,
-    })
+    });
 
-    setLoading(false)
+    setLoading(false);
     if (res.ok) {
-      setSubmitted(true)
-      form.reset()
+      setSubmitted(true);
+      form.reset();
     } else {
-      const json = await res.json().catch(() => ({}))
-      setError(json.error ?? 'Something went wrong. Please try again.')
+      const json = await res.json().catch(() => ({}));
+      setError(json.error ?? "Something went wrong. Please try again.");
     }
-  }
+  };
 
   return (
     <section
-      id='contact'
-      className='w-full min-h-screen grid place-items-center bg-white dark:bg-gray-900 py-10 sm:py-16 lg:py-24 px-4 border-t border-gray-100 dark:border-gray-800'>
-      <div className='max-w-7xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start'>
-
+      id="contact"
+      className="grid min-h-screen w-full place-items-center border-t border-gray-100 bg-white px-4 py-10 sm:py-16 lg:py-24 dark:border-gray-800 dark:bg-gray-900"
+    >
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-12 md:grid-cols-2">
         {/* Left — Contact Info */}
-        <div className='flex flex-col gap-8'>
+        <div className="flex flex-col gap-8">
           <div>
-            <p className='text-sm font-bold tracking-widest text-gray-400 uppercase mb-3'>Get In Touch</p>
-            <h2 className='text-3xl md:text-4xl font-bold leading-tight text-slate-800 dark:text-white'>
-              Let&apos;s talk about <span className='text-blue-500'>your project.</span>
+            <p className="mb-3 text-sm font-bold tracking-widest text-gray-400 uppercase">
+              Get In Touch
+            </p>
+            <h2 className="text-3xl leading-tight font-bold text-slate-800 md:text-4xl dark:text-white">
+              Let&apos;s talk about{" "}
+              <span className="text-blue-500">your project.</span>
             </h2>
-            <div className='w-10 h-1 bg-blue-500 rounded mt-6'></div>
+            <div className="mt-6 h-1 w-10 rounded bg-blue-500"></div>
           </div>
 
-          <p className='text-base text-gray-500 dark:text-gray-400 leading-relaxed'>
-            Whether you have a clear vision or just an idea, we&apos;d love to hear from you. Fill out the form and we&apos;ll get back to you within one business day to set up a free consultation.
+          <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+            Whether you have a clear vision or just an idea, we&apos;d love to
+            hear from you. Fill out the form and we&apos;ll get back to you
+            within one business day to set up a free consultation.
           </p>
 
-          <div className='flex flex-col gap-5'>
-            <div className='flex items-center gap-4'>
-              <div className='flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900 text-blue-500 shrink-0'>
-                <FiMail className='w-4 h-4' aria-hidden='true' />
+          <div className="flex flex-col gap-5">
+            <div className="flex items-center gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-500 dark:bg-blue-900">
+                <FiMail className="h-4 w-4" aria-hidden="true" />
               </div>
               <div>
-                <p className='text-xs text-gray-400 font-medium uppercase tracking-wide'>Email</p>
-                <a href='mailto:hello@blackwrendigital.com' className='text-sm font-semibold text-slate-700 dark:text-white hover:text-blue-500 transition-colors'>
-                  hello@blackwrendigital.com
+                <p className="text-xs font-medium tracking-wide text-gray-400 uppercase">
+                  Email
+                </p>
+                <a
+                  href="mailto:contact@blackwrendigital.com"
+                  className="text-sm font-semibold text-slate-700 transition-colors hover:text-blue-500 dark:text-white"
+                >
+                  contact@blackwrendigital.com
                 </a>
               </div>
             </div>
 
-            <div className='flex items-center gap-4'>
-              <div className='flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900 text-blue-500 shrink-0'>
-                <FiMapPin className='w-4 h-4' aria-hidden='true' />
+            <div className="flex items-center gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-500 dark:bg-blue-900">
+                <FiMapPin className="h-4 w-4" aria-hidden="true" />
               </div>
               <div>
-                <p className='text-xs text-gray-400 font-medium uppercase tracking-wide'>Location</p>
-                <p className='text-sm font-semibold text-slate-700 dark:text-white'>Indianapolis, IN</p>
+                <p className="text-xs font-medium tracking-wide text-gray-400 uppercase">
+                  Location
+                </p>
+                <p className="text-sm font-semibold text-slate-700 dark:text-white">
+                  Indianapolis, IN
+                </p>
               </div>
             </div>
 
-            <div className='flex items-center gap-4'>
-              <div className='flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900 text-blue-500 shrink-0'>
-                <FiClock className='w-4 h-4' aria-hidden='true' />
+            <div className="flex items-center gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-500 dark:bg-blue-900">
+                <FiClock className="h-4 w-4" aria-hidden="true" />
               </div>
               <div>
-                <p className='text-xs text-gray-400 font-medium uppercase tracking-wide'>Response Time</p>
-                <p className='text-sm font-semibold text-slate-700 dark:text-white'>Within 1 business day</p>
+                <p className="text-xs font-medium tracking-wide text-gray-400 uppercase">
+                  Response Time
+                </p>
+                <p className="text-sm font-semibold text-slate-700 dark:text-white">
+                  Within 1 business day
+                </p>
               </div>
             </div>
           </div>
 
-          <div className='flex gap-4 pt-2'>
-            <a href='#' target='_blank' rel='noreferrer' className='flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 hover:text-blue-500 hover:border-blue-500 transition-colors'>
-              <BsLinkedin className='w-4 h-4' />
+          <div className="flex gap-4 pt-2">
+            <a
+              href="#"
+              target="_blank"
+              rel="noreferrer"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-500 transition-colors hover:border-blue-500 hover:text-blue-500 dark:border-gray-700"
+            >
+              <BsLinkedin className="h-4 w-4" />
             </a>
-            <a href='#' target='_blank' rel='noreferrer' className='flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 hover:text-blue-500 hover:border-blue-500 transition-colors'>
-              <FaGoogle className='w-4 h-4' />
+            <a
+              href="#"
+              target="_blank"
+              rel="noreferrer"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-500 transition-colors hover:border-blue-500 hover:text-blue-500 dark:border-gray-700"
+            >
+              <FaGoogle className="h-4 w-4" />
             </a>
           </div>
         </div>
 
         {/* Right — Form */}
-        <div className='bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-100 dark:border-gray-700'>
+        <div className="rounded-2xl border border-gray-100 bg-gray-50 p-8 dark:border-gray-700 dark:bg-gray-800">
           {submitted ? (
-            <div role='status' aria-live='polite' className='flex flex-col items-center justify-center h-full gap-4 py-16 text-center'>
-              <div className='w-14 h-14 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center'>
-                <FiSend className='w-6 h-6 text-blue-500' aria-hidden='true' />
+            <div
+              role="status"
+              aria-live="polite"
+              className="flex h-full flex-col items-center justify-center gap-4 py-16 text-center"
+            >
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+                <FiSend className="h-6 w-6 text-blue-500" aria-hidden="true" />
               </div>
-              <h3 className='text-xl font-bold text-slate-800 dark:text-white'>Message Sent!</h3>
-              <p className='text-gray-500 dark:text-gray-400 text-sm max-w-xs'>
-                Thanks for reaching out. We&apos;ll be in touch within one business day.
+              <h3 className="text-xl font-bold text-slate-800 dark:text-white">
+                Message Sent!
+              </h3>
+              <p className="max-w-xs text-sm text-gray-500 dark:text-gray-400">
+                Thanks for reaching out. We&apos;ll be in touch within one
+                business day.
               </p>
               <button
                 onClick={() => setSubmitted(false)}
-                className='mt-2 text-sm text-blue-500 hover:underline'>
+                className="mt-2 text-sm text-blue-500 hover:underline"
+              >
                 Send another message
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className='flex flex-col gap-5'>
-              <div className='grid grid-cols-1 sm:grid-cols-2 gap-5'>
-                <div className='flex flex-col gap-1.5'>
-                  <label className='text-xs font-bold text-slate-600 dark:text-gray-300 uppercase tracking-wide'>Name *</label>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs font-bold tracking-wide text-slate-600 uppercase dark:text-gray-300">
+                    Name *
+                  </label>
                   <input
-                    type='text'
-                    name='name'
+                    type="text"
+                    name="name"
                     required
-                    placeholder='Jane Smith'
-                    className='rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-2.5 text-sm text-slate-700 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                    placeholder="Jane Smith"
+                    className="rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-slate-700 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-white"
                   />
                 </div>
-                <div className='flex flex-col gap-1.5'>
-                  <label className='text-xs font-bold text-slate-600 dark:text-gray-300 uppercase tracking-wide'>Email *</label>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-xs font-bold tracking-wide text-slate-600 uppercase dark:text-gray-300">
+                    Email *
+                  </label>
                   <input
-                    type='email'
-                    name='email'
+                    type="email"
+                    name="email"
                     required
-                    placeholder='jane@company.com'
-                    className='rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-2.5 text-sm text-slate-700 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                    placeholder="jane@company.com"
+                    className="rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-slate-700 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-white"
                   />
                 </div>
               </div>
 
-              <div className='flex flex-col gap-1.5'>
-                <label className='text-xs font-bold text-slate-600 dark:text-gray-300 uppercase tracking-wide'>Phone <span className='text-gray-400 normal-case font-normal'>(optional)</span></label>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-bold tracking-wide text-slate-600 uppercase dark:text-gray-300">
+                  Phone{" "}
+                  <span className="font-normal text-gray-400 normal-case">
+                    (optional)
+                  </span>
+                </label>
                 <input
-                  type='tel'
-                  name='phone'
-                  placeholder='(317) 555-0100'
-                  className='rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-2.5 text-sm text-slate-700 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                  type="tel"
+                  name="phone"
+                  placeholder="(317) 555-0100"
+                  className="rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-slate-700 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-white"
                 />
               </div>
 
-              <div className='flex flex-col gap-1.5'>
-                <label className='text-xs font-bold text-slate-600 dark:text-gray-300 uppercase tracking-wide'>I&apos;m interested in *</label>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-bold tracking-wide text-slate-600 uppercase dark:text-gray-300">
+                  I&apos;m interested in *
+                </label>
                 <select
-                  name='service'
+                  name="service"
                   required
-                  className='rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-2.5 text-sm text-slate-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500'>
-                  <option value=''>Select a service...</option>
+                  className="rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-slate-700 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-white"
+                >
+                  <option value="">Select a service...</option>
                   {services.map((s) => (
-                    <option key={s} value={s}>{s}</option>
+                    <option key={s} value={s}>
+                      {s}
+                    </option>
                   ))}
                 </select>
               </div>
 
-              <div className='flex flex-col gap-1.5'>
-                <label className='text-xs font-bold text-slate-600 dark:text-gray-300 uppercase tracking-wide'>Tell us about your project *</label>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-bold tracking-wide text-slate-600 uppercase dark:text-gray-300">
+                  Tell us about your project *
+                </label>
                 <textarea
-                  name='message'
+                  name="message"
                   required
                   rows={5}
-                  placeholder='What are you looking to build? Any details about your timeline or budget are helpful too.'
-                  className='rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-2.5 text-sm text-slate-700 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none'
+                  placeholder="What are you looking to build? Any details about your timeline or budget are helpful too."
+                  className="resize-none rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-slate-700 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-white"
                 />
               </div>
 
               {error && (
-                <p role='alert' aria-live='assertive' className='text-sm text-red-500 text-center'>{error}</p>
+                <p
+                  role="alert"
+                  aria-live="assertive"
+                  className="text-center text-sm text-red-500"
+                >
+                  {error}
+                </p>
               )}
 
               <button
-                type='submit'
+                type="submit"
                 disabled={loading}
-                className='flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 disabled:opacity-60 text-white font-bold px-8 py-3 rounded-full transition-colors duration-300'>
-                {loading ? 'Sending...' : (
-                  <><FiSend className='w-4 h-4' aria-hidden='true' /> Send Message</>
+                className="flex items-center justify-center gap-2 rounded-full bg-blue-500 px-8 py-3 font-bold text-white transition-colors duration-300 hover:bg-blue-600 disabled:opacity-60"
+              >
+                {loading ? (
+                  "Sending..."
+                ) : (
+                  <>
+                    <FiSend className="h-4 w-4" aria-hidden="true" /> Send
+                    Message
+                  </>
                 )}
               </button>
 
-              <p className='text-xs text-gray-400 text-center'>
+              <p className="text-center text-xs text-gray-400">
                 No spam. No commitments. Just a conversation.
               </p>
             </form>
           )}
         </div>
-
       </div>
     </section>
-  )
+  );
 }
