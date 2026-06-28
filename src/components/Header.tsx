@@ -95,17 +95,13 @@ const Header: React.FC = () => {
       ) : (
         <nav className="animate-slide animate-appear flex items-center justify-between px-4 py-2 transition-opacity duration-500">
           <div className="flex items-center">
-            {/* <Image
-              src='/assets/img/evergreen-jlbs-06 copy.png'
-              alt='evergreen_logo'
-              sizes='10vw'
-              width={0}
-              height={0}
-              style={{ width: '50px', height: '50px' }}
-              priority
-              className='z-40'
-            /> */}
-            <h2 className="z-40 ml-2">BUSINESS NAME</h2>
+            <h2 className="z-50 text-lg leading-[0.85]">
+              BLACK
+              <br />
+              WREN
+              <br />
+              DIGITAL
+            </h2>
           </div>
 
           <FaBars onClick={toggle} className="h-auto w-8 cursor-pointer" />
