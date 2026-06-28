@@ -25,7 +25,7 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <div className="absolute z-50 h-auto w-full py-4 font-bold lg:px-10 xl:px-5">
+    <div className="fixed top-0 left-0 z-50 h-auto w-full border-b bg-[#030712] py-2 font-bold lg:px-2">
       {isDesktop ? (
         <nav className="animate-slide animate-appear mx-auto flex max-w-7xl items-center justify-between transition-opacity duration-500">
           <div className="z-50 flex items-center gap-x-2">
@@ -42,7 +42,7 @@ const Header: React.FC = () => {
             <ul className="flex gap-x-6">
               <li className="flex items-center gap-x-2 text-sm hover:text-slate-500">
                 <Link href="/" className="flex items-center gap-x-2">
-                  HOME
+                  Home
                 </Link>
               </li>
               <li className="text-sm hover:text-slate-500">
@@ -55,7 +55,7 @@ const Header: React.FC = () => {
                       ?.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
-                  ABOUT US
+                  About Us
                 </a>
               </li>
               <li className="text-sm hover:text-slate-500">
@@ -68,7 +68,7 @@ const Header: React.FC = () => {
                       ?.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
-                  PRICING
+                  Pricing
                 </a>
               </li>
               <li className="text-sm hover:text-slate-500">
@@ -81,12 +81,12 @@ const Header: React.FC = () => {
                       ?.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
-                  CONTACT
+                  Contact
                 </a>
               </li>
             </ul>
             <button className="flex bg-blue-500 px-8 py-1 text-sm text-white transition-colors duration-300 hover:bg-white hover:text-black">
-              START HERE
+              Start Here
               <HiArrowSmRight className="ml-2 size-5 rotate-45" />
             </button>
             <ModeToggle />
