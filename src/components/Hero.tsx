@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
           className={`${fadeBase} delay-300 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
           } text-center text-base md:text-2xl font-bold max-w-3xl mx-auto leading-tight`}>
-          We solve your digital challenges providing thoughtful solutions that drive real results. At Black Wren Digital we're dedicated to helping your business thrive in the digital age.
+          We solve your digital challenges providing thoughtful solutions that drive real results. At Black Wren Digital we&apos;re dedicated to helping your business thrive in the digital age.
         </p>
 
         <div className='z-40 flex w-full gap-x-2 justify-center'>

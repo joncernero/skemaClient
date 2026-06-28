@@ -10,7 +10,7 @@ const pillars = [
 const stats = [
   {
     value: '75%',
-    label: 'Of consumers judge a business\'s credibility by its website design',
+    label: "Of consumers judge a business's credibility by its website design",
     ref: '¹',
   },
   {
@@ -20,7 +20,7 @@ const stats = [
   },
   {
     value: '70%',
-    label: 'Of small businesses lack clear calls-to-action on their homepage',
+    label: "Of small businesses lack clear calls-to-action on their homepage",
     ref: '³',
   },
   {
@@ -64,10 +64,10 @@ export default function Stats() {
           </div>
           <div className='md:pt-2'>
             <p className='text-base text-gray-500 dark:text-gray-400 leading-relaxed'>
-              Most businesses don't need a massive agency or an unreliable freelancer — they need a focused partner who understands both technology and real-world operations. That's what Black Wren Digital is built to be.
+              Most businesses don&apos;t need a massive agency or an unreliable freelancer — they need a focused partner who understands both technology and real-world operations. That&apos;s what Black Wren Digital is built to be.
             </p>
             <p className='text-base text-gray-500 dark:text-gray-400 leading-relaxed mt-4'>
-              Whether you're launching your first website, connecting your tools through a custom API, or building an application to streamline how your team works — we start with your goals and build toward them. No bloated proposals, no cookie-cutter templates, no hand-offs to junior developers overseas.
+              Whether you&apos;re launching your first website, connecting your tools through a custom API, or building an application to streamline how your team works — we start with your goals and build toward them. No bloated proposals, no cookie-cutter templates, no hand-offs to junior developers overseas.
             </p>
             <p className='text-base text-gray-500 dark:text-gray-400 leading-relaxed mt-4'>
               From Indianapolis, we serve businesses that want more than a digital presence — they want a digital advantage.

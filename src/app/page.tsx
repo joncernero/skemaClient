@@ -10,11 +10,37 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Black Wren Digital | Home",
+  openGraph: {
+    title: "Black Wren Digital",
+    description:
+      "Fast, modern websites, APIs, and custom web applications for businesses.",
+    url: "https://blackwrendigital.com",
+  },
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Black Wren Digital",
+  url: "https://blackwrendigital.com",
+  email: "contact@blackwrendigital.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Indianapolis",
+    addressRegion: "IN",
+    addressCountry: "US",
+  },
 };
 
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
+      />
       <div className="relative w-full">
         <Header />
         <Hero />

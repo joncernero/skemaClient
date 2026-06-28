@@ -52,13 +52,13 @@ export default function Contact() {
           <div>
             <p className='text-sm font-bold tracking-widest text-gray-400 uppercase mb-3'>Get In Touch</p>
             <h2 className='text-3xl md:text-4xl font-bold leading-tight text-slate-800 dark:text-white'>
-              Let's talk about <span className='text-blue-500'>your project.</span>
+              Let&apos;s talk about <span className='text-blue-500'>your project.</span>
             </h2>
             <div className='w-10 h-1 bg-blue-500 rounded mt-6'></div>
           </div>
 
           <p className='text-base text-gray-500 dark:text-gray-400 leading-relaxed'>
-            Whether you have a clear vision or just an idea, we'd love to hear from you. Fill out the form and we'll get back to you within one business day to set up a free consultation.
+            Whether you have a clear vision or just an idea, we&apos;d love to hear from you. Fill out the form and we&apos;ll get back to you within one business day to set up a free consultation.
           </p>
 
           <div className='flex flex-col gap-5'>
@@ -114,7 +114,7 @@ export default function Contact() {
               </div>
               <h3 className='text-xl font-bold text-slate-800 dark:text-white'>Message Sent!</h3>
               <p className='text-gray-500 dark:text-gray-400 text-sm max-w-xs'>
-                Thanks for reaching out. We'll be in touch within one business day.
+                Thanks for reaching out. We&apos;ll be in touch within one business day.
               </p>
               <button
                 onClick={() => setSubmitted(false)}
@@ -158,7 +158,7 @@ export default function Contact() {
               </div>
 
               <div className='flex flex-col gap-1.5'>
-                <label className='text-xs font-bold text-slate-600 dark:text-gray-300 uppercase tracking-wide'>I'm interested in *</label>
+                <label className='text-xs font-bold text-slate-600 dark:text-gray-300 uppercase tracking-wide'>I&apos;m interested in *</label>
                 <select
                   name='service'
                   required
@@ -176,7 +176,7 @@ export default function Contact() {
                   name='message'
                   required
                   rows={5}
-                  placeholder="What are you looking to build? Any details about your timeline or budget are helpful too."
+                  placeholder='What are you looking to build? Any details about your timeline or budget are helpful too.'
                   className='rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-900 px-4 py-2.5 text-sm text-slate-700 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none'
                 />
               </div>

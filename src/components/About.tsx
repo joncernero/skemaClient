@@ -55,7 +55,7 @@ const About = () => {
                 <FiDatabase className='w-10 h-10 text-blue-500' aria-hidden='true' />
               </div>
               <h3 className='mt-6 text-xl font-semibold leading-tight text-slate-800 dark:text-white md:mt-10'>
-                API's & DATA FEEDS
+                API&apos;s &amp; DATA FEEDS
               </h3>
               <p className='mt-4 text-base text-gray-600'>
                 Connect your tools, automate your workflows, and unlock the power of your data. We build and integrate APIs that let your systems talk to each other seamlessly — saving you time and eliminating manual work.
@@ -70,7 +70,7 @@ const About = () => {
                 CUSTOM APPLICATIONS
               </h3>
               <p className='mt-4 text-base text-gray-600'>
-                When off-the-shelf software doesn't cut it, we build something made for you. From internal business tools to customer-facing platforms, we create scalable web applications tailored to how your business actually operates.
+                When off-the-shelf software doesn&apos;t cut it, we build something made for you. From internal business tools to customer-facing platforms, we create scalable web applications tailored to how your business actually operates.
               </p>
             </div>
           </div>

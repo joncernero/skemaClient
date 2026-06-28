@@ -64,7 +64,7 @@ export default function Pricing() {
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-800 dark:text-white">Services & Pricing</h1>
           <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Every project is custom-built to fit your goals. Reach out for a free consultation and we'll find the right solution for your business.
+            Every project is custom-built to fit your goals. Reach out for a free consultation and we&apos;ll find the right solution for your business.
           </p>
         </div>
 
@@ -120,7 +120,7 @@ export default function Pricing() {
 
         {/* Footer note */}
         <p className="text-center text-sm text-gray-500 dark:text-gray-400">
-          Not sure where to start? <a href="#contact" className="text-blue-500 hover:underline font-medium">Let's talk</a> — we'll help you figure out the right fit.
+          Not sure where to start? <a href="#contact" className="text-blue-500 hover:underline font-medium">Let&apos;s talk</a> — we&apos;ll help you figure out the right fit.
         </p>
 
       </div>
