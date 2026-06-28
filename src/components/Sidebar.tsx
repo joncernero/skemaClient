@@ -22,7 +22,7 @@ const SideBar: React.FC<SideBarProps> = ({ toggle }) => {
       role="dialog"
       aria-modal="true"
       aria-label="Navigation menu"
-      className="absolute top-0 left-0 z-50 container flex h-screen w-full translate-x-0 transform justify-center bg-white py-5 transition-transform duration-300 ease-out dark:bg-gray-900"
+      className="absolute top-0 left-0 z-50 container flex h-screen w-full translate-x-0 transform justify-center bg-gray-900 py-5 transition-transform duration-300 ease-out"
     >
       <nav aria-label="Mobile navigation">
         <ul
@@ -40,7 +40,7 @@ const SideBar: React.FC<SideBarProps> = ({ toggle }) => {
             </button>
           </li>
 
-          <li className="z-50 flex items-center gap-x-2 text-base font-bold text-black hover:text-slate-500 dark:text-white">
+          <li className="z-50 flex items-center gap-x-2 text-base font-bold text-white hover:text-slate-500">
             <Link
               href="/"
               onClick={toggle}
@@ -49,7 +49,7 @@ const SideBar: React.FC<SideBarProps> = ({ toggle }) => {
               HOME
             </Link>
           </li>
-          <li className="z-50 font-bold text-black hover:text-slate-500 dark:text-white">
+          <li className="z-50 font-bold text-white hover:text-slate-500">
             <a
               href="#about"
               className="rounded focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
@@ -64,7 +64,7 @@ const SideBar: React.FC<SideBarProps> = ({ toggle }) => {
               ABOUT US
             </a>
           </li>
-          <li className="z-50 font-bold text-black hover:text-slate-500 dark:text-white">
+          <li className="z-50 font-bold text-white hover:text-slate-500">
             <a
               href="#pricing"
               className="rounded focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
@@ -79,7 +79,7 @@ const SideBar: React.FC<SideBarProps> = ({ toggle }) => {
               PRICING
             </a>
           </li>
-          <li className="z-50 font-bold text-black hover:text-slate-500 dark:text-white">
+          <li className="z-50 font-bold text-white hover:text-slate-500">
             <a
               href="#contact"
               className="rounded focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"

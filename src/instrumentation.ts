@@ -14,33 +14,33 @@
  */
 export async function register() {
   // Only patch on the server (this file runs in the Node.js runtime)
-  if (typeof globalThis.localStorage !== 'undefined') {
-    const ls = globalThis.localStorage as Storage
+  if (typeof globalThis.localStorage !== "undefined") {
+    const ls = globalThis.localStorage as Storage;
 
     // Detect broken implementation: object exists but getItem isn't callable
-    if (typeof ls.getItem !== 'function') {
-      const data: Record<string, string> = {}
+    if (typeof ls.getItem !== "function") {
+      const data: Record<string, string> = {};
 
-      Object.defineProperty(globalThis, 'localStorage', {
+      Object.defineProperty(globalThis, "localStorage", {
         value: {
           getItem: (key: string) => data[key] ?? null,
           setItem: (key: string, value: string) => {
-            data[key] = String(value)
+            data[key] = String(value);
           },
           removeItem: (key: string) => {
-            delete data[key]
+            delete data[key];
           },
           clear: () => {
-            for (const k in data) delete data[k]
+            for (const k in data) delete data[k];
           },
           key: (index: number) => Object.keys(data)[index] ?? null,
           get length() {
-            return Object.keys(data).length
+            return Object.keys(data).length;
           },
         } satisfies Storage,
         writable: true,
         configurable: true,
-      })
+      });
     }
   }
 }
